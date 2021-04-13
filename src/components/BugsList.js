@@ -1,9 +1,9 @@
 import React from "react"
 import {useObserver} from "mobx-react"
+import { useStore } from "./StoreProvider"
 
 function BugsList() {
-    const store = React.useContext(StoreContext)
-
+    const store = useStore()
     return useObserver(() => (
         <ul>
             {store.bugs.map(bug => (

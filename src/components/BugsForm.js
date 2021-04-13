@@ -1,9 +1,10 @@
 import { React, useState } from "react";
 import { useLocalStore, useObserver } from "mobx-react"
+import { useStore } from "./StoreProvider"
 
 function BugsForm() {
-    const store = React.useContext(StoreContext)
-    const [bug, setBug] = React.useState("")
+    const store = useStore()
+    const [bug, setBug] = useState("")
 
     return (
         <form
